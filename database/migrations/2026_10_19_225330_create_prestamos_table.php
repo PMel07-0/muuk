@@ -9,17 +9,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('prestamos', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('cliente_id')->constrained();
-            $table->foreignId('material_id')
-                ->constrained('materiales_deportivos');
-            $table->date('fecha_prestamo');
-            $table->date('fecha_devolucion')
-                ->nullable();
-            $table->enum('estatus',[
-                        'prestado',
-                        'devuelto'
-            ]);
+            $table->id('idPrestamo');
+            $table->foreignId('cliente_idCliente')
+                 ->constrained('clientes', 'idCliente');
+            $table->date('fechaPrestamo');
+            $table->string('estado')->default('Activo'); // Activo / Completado
             $table->timestamps();
         });
     }

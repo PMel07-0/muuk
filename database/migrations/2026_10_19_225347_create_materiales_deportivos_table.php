@@ -9,12 +9,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('materiales_deportivos', function (Blueprint $table) {
-            $table->id();
+            $table->id('idMaterial');
             $table->string('nombre');
             $table->string('categoria');
-            $table->integer('cantidad_total');
-            $table->integer('cantidad_disponible');
-            $table->string('estado')->default('bueno');
+            $table->string('estado_fisico')->default('Bueno'); 
+            $table->integer('cantidad_inventario')->default(0); 
+            $table->integer('cantidad_disponible')->default(0); 
+            $table->string('estatus')->default('Disponible');
             $table->timestamps();
         });
     }

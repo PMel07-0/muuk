@@ -8,27 +8,19 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('membresias', function (Blueprint $table) {
-
+       Schema::create('membresias', function (Blueprint $table) {
             $table->id('idMembresia');
-
-            $table->string('tipo');
-            $table->text('descripcion')->nullable();
-
-            $table->decimal('costo', 10, 2)->default(0.00);
-
-            $table->date('fechaInicio');
-            $table->date('fechaFin');
-
-            $table->string('vigencia')->default('Vigente');
-
             $table->foreignId('cliente_idCliente')
-                  ->constrained('cliente', 'idCliente');
-
+                  ->constrained('clientes', 'idCliente');
+            $table->foreignId('tipoMembresia_idTipoMembresia')
+                  ->constrained('tipo_membresia', 'idTipoMembresia');
+            $table->date('fechaInicio');
+            $table->date('fechaFin');          
+            $table->decimal('pago', 10, 2);    
+            $table->string('vigencia')->default('Vigente'); 
             $table->timestamps();
         });
     }
-
     public function down(): void
     {
         Schema::dropIfExists('membresias');
