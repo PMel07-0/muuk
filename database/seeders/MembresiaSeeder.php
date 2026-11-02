@@ -12,10 +12,10 @@ class MembresiaSeeder extends Seeder
     public function run(): void
     {
         // Mir - Mensual
-        $tipo = TipoMembresia::find(1); // Mensual, 30 días
+        $tipo = TipoMembresia::find(1); 
         $fechaInicio = Carbon::parse('2026-10-01');
 
-        Membresia::create([
+        Membresia::firstOrCreate([
             'cliente_idCliente' => 1,
             'tipoMembresia_idTipoMembresia' => $tipo->idTipoMembresia,
             'fechaInicio' => $fechaInicio,
@@ -25,10 +25,10 @@ class MembresiaSeeder extends Seeder
         ]);
 
         // Naye - Trimestral
-        $tipo = TipoMembresia::find(2); // Trimestral, 90 días
+        $tipo = TipoMembresia::find(2); 
         $fechaInicio = Carbon::parse('2026-08-15');
 
-        Membresia::create([
+        Membresia::firstOrCreate([
             'cliente_idCliente' => 2,
             'tipoMembresia_idTipoMembresia' => $tipo->idTipoMembresia,
             'fechaInicio' => $fechaInicio,
@@ -38,10 +38,10 @@ class MembresiaSeeder extends Seeder
         ]);
 
         // Fer - Anual
-        $tipo = TipoMembresia::find(4); // Anual, 365 días
+        $tipo = TipoMembresia::find(4); 
         $fechaInicio = Carbon::parse('2026-01-10');
 
-        Membresia::create([
+        Membresia::firstOrCreate([
             'cliente_idCliente' => 5,
             'tipoMembresia_idTipoMembresia' => $tipo->idTipoMembresia,
             'fechaInicio' => $fechaInicio,

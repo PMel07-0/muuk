@@ -20,6 +20,10 @@ class TipoMembresia extends Model
 
     public function membresias(): HasMany
     {
-        return $this->hasMany(Membresia::class);
+        return $this->hasMany(
+            Membresia::class,
+            'tipoMembresia_idTipoMembresia',
+            'idTipoMembresia'
+        );
     }
 }

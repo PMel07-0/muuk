@@ -8,4 +8,18 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateCliente extends CreateRecord
 {
     protected static string $resource = ClienteResource::class;
+
+    protected static ?string $title = 'Registrar un nuevo Cliente.';
+
+    protected static bool $canCreateAnother = false;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+    protected function getCreatedNotificationTitle(): ?string
+    {
+        return 'Cliente Registrado';
+    }
 }

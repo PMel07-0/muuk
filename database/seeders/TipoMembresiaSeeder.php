@@ -9,7 +9,7 @@ class TipoMembresiaSeeder extends Seeder
 {
     public function run(): void
     {
-        TipoMembresia::create([
+        TipoMembresia::firstOrCreate([
             'nombre' => 'Mensual',
             'descripcion' => 'Acceso al gimnasio por un mes',
             'costo' => 350.00,
@@ -17,7 +17,7 @@ class TipoMembresiaSeeder extends Seeder
             'estatus' => 'Activo',
         ]);
 
-        TipoMembresia::create([
+        TipoMembresia::firstOrCreate([
             'nombre' => 'Trimestral',
             'descripcion' => 'Acceso al gimnasio por tres meses',
             'costo' => 900.00,
@@ -25,7 +25,7 @@ class TipoMembresiaSeeder extends Seeder
             'estatus' => 'Activo',
         ]);
 
-        TipoMembresia::create([
+        TipoMembresia::firstOrCreate([
             'nombre' => 'Semestral',
             'descripcion' => 'Acceso al gimnasio por seis meses',
             'costo' => 1600.00,
@@ -33,7 +33,7 @@ class TipoMembresiaSeeder extends Seeder
             'estatus' => 'Activo',
         ]);
 
-        TipoMembresia::create([
+        TipoMembresia::firstOrCreate([
             'nombre' => 'Anual',
             'descripcion' => 'Acceso al gimnasio por un año',
             'costo' => 3000.00,

@@ -10,10 +10,21 @@ class EditCliente extends EditRecord
 {
     protected static string $resource = ClienteResource::class;
 
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+    protected function getSavedNotificationTitle(): ?string
+    {
+        return 'Cliente actualizaco exitosamente';
+    }
+
     protected function getHeaderActions(): array
     {
-        return [
-            DeleteAction::make(),
+        eturn [
+            DeleteAction::make()
+                ->hidden(fn ($record) => $record->clientes()->withTrashed()->exists())
         ];
     }
 }

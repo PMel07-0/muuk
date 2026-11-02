@@ -9,7 +9,7 @@ class MaterialDeportivoSeeder extends Seeder
 {
     public function run(): void
     {
-        MaterialDeportivo::create([
+        MaterialDeportivo::firstOrCreate([
             'nombre' => 'Mancuerna 10kg',
             'categoria' => 'Pesas',
             'estado_fisico' => 'Bueno',
@@ -18,7 +18,7 @@ class MaterialDeportivoSeeder extends Seeder
             'estatus' => 'Disponible',
         ]);
 
-        MaterialDeportivo::create([
+        MaterialDeportivo::firstOrCreate([
             'nombre' => 'Pelota de yoga',
             'categoria' => 'Funcional',
             'estado_fisico' => 'Bueno',
@@ -27,7 +27,7 @@ class MaterialDeportivoSeeder extends Seeder
             'estatus' => 'Disponible',
         ]);
 
-        MaterialDeportivo::create([
+        MaterialDeportivo::firstOrCreate([
             'nombre' => 'Cuerda para saltar',
             'categoria' => 'Cardio',
             'estado_fisico' => 'Bueno',
@@ -36,7 +36,7 @@ class MaterialDeportivoSeeder extends Seeder
             'estatus' => 'Disponible',
         ]);
 
-        MaterialDeportivo::create([
+        MaterialDeportivo::firstOrCreate([
             'nombre' => 'Colchoneta',
             'categoria' => 'Funcional',
             'estado_fisico' => 'Deteriorado',
@@ -45,7 +45,7 @@ class MaterialDeportivoSeeder extends Seeder
             'estatus' => 'Disponible',
         ]);
 
-        MaterialDeportivo::create([
+        MaterialDeportivo::firstOrCreate([
             'nombre' => 'Banda de resistencia',
             'categoria' => 'Funcional',
             'estado_fisico' => 'Bueno',

@@ -12,7 +12,7 @@ class ClienteSeeder extends Seeder
      */
     public function run(): void
     {
-        Cliente::create([
+        Cliente::firstOrCreate([
             'nombre' => 'Miriam Doyel',
             'apellido_paterno' => 'Lozano',
             'apellido_materno' => 'Matus',
@@ -21,7 +21,7 @@ class ClienteSeeder extends Seeder
             'estatus' => 'Activa'
         ]);
 
-        Cliente::create([
+        Cliente::firstOrCreate([
             'nombre' => 'Karen Nayeli',
             'apellido_paterno' => 'Hernández',
             'apellido_materno' => 'González',
@@ -30,7 +30,7 @@ class ClienteSeeder extends Seeder
             'estatus' => 'Activa'
         ]);
 
-        Cliente::create([
+        Cliente::firstOrCreate([
             'nombre' => 'Paola Melissa',
             'apellido_paterno' => 'Méndez',
             'apellido_materno' => 'Jiménez',
@@ -39,7 +39,7 @@ class ClienteSeeder extends Seeder
             'estatus' => 'Inactiva'
         ]);
 
-        Cliente::create([
+        Cliente::firstOrCreate([
             'nombre' => 'Maximiliano',
             'apellido_paterno' => 'Soto',
             'apellido_materno' => 'Palao',
@@ -48,7 +48,7 @@ class ClienteSeeder extends Seeder
             'estatus' => 'Inactiva'
         ]);
 
-        Cliente::create([
+        Cliente::firstOrCreate([
             'nombre' => 'José Fernando',
             'apellido_paterno' => 'Ochoa',
             'apellido_materno' => 'Trejo',

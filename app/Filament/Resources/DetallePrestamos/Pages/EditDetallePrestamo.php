@@ -10,10 +10,22 @@ class EditDetallePrestamo extends EditRecord
 {
     protected static string $resource = DetallePrestamoResource::class;
 
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+    protected function getSavedNotificationTitle(): ?string
+    {
+        return 'Prestamo actualizado exitosamente';
+    }
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            DeleteAction::make()
+                ->hidden(fn ($record) => $record->detallePrestamos()->withTrashed()->exists())
+
         ];
     }
 }

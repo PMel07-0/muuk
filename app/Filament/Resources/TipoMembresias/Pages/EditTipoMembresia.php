@@ -10,10 +10,22 @@ class EditTipoMembresia extends EditRecord
 {
     protected static string $resource = TipoMembresiaResource::class;
 
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+    protected function getSavedNotificationTitle(): ?string
+    {
+        return 'Tipo de Membresía actualizado exitosamente';
+    }
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            DeleteAction::make()
+                ->hidden(fn ($record) => $record->tipoMembresia()->withTrashed()->exists())
+
         ];
     }
 }

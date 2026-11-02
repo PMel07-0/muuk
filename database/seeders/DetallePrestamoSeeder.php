@@ -10,7 +10,7 @@ class DetallePrestamoSeeder extends Seeder
     public function run(): void
     {
         // Préstamo 1 - Miriam: mancuerna y cuerda (aún prestadas)
-        DetallePrestamo::create([
+        DetallePrestamo::firstOrCreate([
             'prestamo_idPrestamo' => 1,
             'material_idMaterial' => 1,
             'cantidad' => 2,
@@ -19,7 +19,7 @@ class DetallePrestamoSeeder extends Seeder
             'fechaDevolucion' => null,
         ]);
 
-        DetallePrestamo::create([
+        DetallePrestamo::firstOrCreate([
             'prestamo_idPrestamo' => 1,
             'material_idMaterial' => 3,
             'cantidad' => 1,
@@ -28,8 +28,8 @@ class DetallePrestamoSeeder extends Seeder
             'fechaDevolucion' => null,
         ]);
 
-        // Préstamo 2 - Karen: pelota de yoga (ya devuelta)
-        DetallePrestamo::create([
+        // Préstamo 2 - Nayeli: pelota de yoga (ya devuelta)
+        DetallePrestamo::firstOrCreate([
             'prestamo_idPrestamo' => 2,
             'material_idMaterial' => 2,
             'cantidad' => 1,
