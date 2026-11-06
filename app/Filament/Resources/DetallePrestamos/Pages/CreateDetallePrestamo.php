@@ -20,6 +20,7 @@ class CreateDetallePrestamo extends CreateRecord
 
     protected function getCreatedNotificationTitle(): ?string
     {
-        return 'Prestamo Registrado';
+        return 'Préstamo Registrado';
     }
 }
+

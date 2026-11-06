@@ -17,7 +17,7 @@ class EditCliente extends EditRecord
 
     protected function getSavedNotificationTitle(): ?string
     {
-        return 'Cliente actualizaco exitosamente';
+        return 'Cliente actualizado exitosamente';
     }
 
     protected function getHeaderActions(): array

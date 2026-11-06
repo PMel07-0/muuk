@@ -17,7 +17,7 @@ class EditDetallePrestamo extends EditRecord
 
     protected function getSavedNotificationTitle(): ?string
     {
-        return 'Prestamo actualizado exitosamente';
+        return 'Préstamo actualizado exitosamente';
     }
 
     protected function getHeaderActions(): array

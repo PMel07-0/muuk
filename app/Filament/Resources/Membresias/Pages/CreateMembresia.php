@@ -20,6 +20,6 @@ class CreateMembresia extends CreateRecord
 
     protected function getCreatedNotificationTitle(): ?string
     {
-        return 'Membresia registrada';
+        return 'Membresía registrada';
     }
 }
