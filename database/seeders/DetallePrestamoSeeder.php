@@ -37,5 +37,25 @@ class DetallePrestamoSeeder extends Seeder
             'estado_fisico_devuelto' => 'Bueno',
             'fechaDevolucion' => '2026-10-12',
         ]);
+
+        // Préstamo 3 - Max: bandas de resistencia (ya devuelto)
+        DetallePrestamo::firstOrCreate([
+            'prestamo_idPrestamo' => 3,
+            'material_idMaterial' => 4,
+            'cantidad' => 1,
+            'estado' => 'Prestado',
+            'estado_fisico_devuelto' => null,
+            'fechaDevolucion' => null,
+        ]);
+
+        // Préstamo 4 - Pao: tapete de yoga (ya devuelto)
+        DetallePrestamo::firstOrCreate([
+            'prestamo_idPrestamo' => 4,
+            'material_idMaterial' => 5,
+            'cantidad' => 1,
+            'estado' => 'Devuelto',
+            'estado_fisico_devuelto' => 'Bueno',
+            'fechaDevolucion' => '2026-10-18',
+        ]);
     }
 }

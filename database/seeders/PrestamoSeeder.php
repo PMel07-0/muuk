@@ -20,6 +20,21 @@ class PrestamoSeeder extends Seeder
             'fechaPrestamo' => '2026-10-10',
             'estado' => 'Completado',
         ]);
+
+        // Préstamo 3 - Carlos
+        Prestamo::firstOrCreate([
+            'cliente_idCliente' => 3,
+            'fechaPrestamo' => '2026-10-12',
+            'estado' => 'Activo',
+        ]);
+
+        // Préstamo 4 - Sofía
+        Prestamo::firstOrCreate([
+            'cliente_idCliente' => 4,
+            'fechaPrestamo' => '2026-10-15',
+            'estado' => 'Completado',
+]);
+
     }
 }
 

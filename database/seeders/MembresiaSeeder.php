@@ -37,6 +37,32 @@ class MembresiaSeeder extends Seeder
             'vigencia' => 'Vigente',
         ]);
 
+        //Max - Semestral
+        $tipo = TipoMembresia::find(3);
+        $fechaInicio = Carbon::parse('2026-02-15');
+
+        Membresia::firstOrCreate([
+            'cliente_idCliente' => 3,
+            'tipomembresia_idTipoMembresia' => $tipo->idTipoMembresia,
+            'fechaInicio' => $fechaInicio,
+            'fechaFin' => $fechaInicio->copy()->addDays($tipo->duracion_dias),
+            'pago' => $tipo->costo,
+            'vigencia' => 'Vigente',
+        ]);
+
+        // Pao - Anual
+        $tipo = TipoMembresia::find(4);
+        $fechaInicio = Carbon::parse('2026-03-01');
+
+        Membresia::firstOrCreate([
+            'cliente_idCliente' => 4,
+            'tipomembresia_idTipoMembresia' => $tipo->idTipoMembresia,
+            'fechaInicio' => $fechaInicio,
+            'fechaFin' => $fechaInicio->copy()->addDays($tipo->duracion_dias),
+            'pago' => $tipo->costo,
+            'vigencia' => 'Vigente',
+        ]);
+
         // Fer - Anual
         $tipo = TipoMembresia::find(4); 
         $fechaInicio = Carbon::parse('2026-01-10');
