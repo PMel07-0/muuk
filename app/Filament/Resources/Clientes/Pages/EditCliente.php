@@ -22,9 +22,9 @@ class EditCliente extends EditRecord
 
     protected function getHeaderActions(): array
     {
-        eturn [
+        return [
             DeleteAction::make()
-                ->hidden(fn ($record) => $record->clientes()->withTrashed()->exists())
+                ->hidden(fn ($record) => $record->membresiaVigente()->exists())
         ];
     }
 }

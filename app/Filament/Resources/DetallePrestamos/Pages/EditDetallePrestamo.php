@@ -24,8 +24,12 @@ class EditDetallePrestamo extends EditRecord
     {
         return [
             DeleteAction::make()
-                ->hidden(fn ($record) => $record->detallePrestamos()->withTrashed()->exists())
-
+                ->hidden(
+                    fn ($record) =>
+                        $record->prestamo()
+                            ->where('estado', 'Activo')
+                            ->exists()
+                ),
         ];
-    }
+}
 }

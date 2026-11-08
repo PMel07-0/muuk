@@ -24,8 +24,7 @@ class EditTipoMembresia extends EditRecord
     {
         return [
             DeleteAction::make()
-                ->hidden(fn ($record) => $record->tipoMembresia()->withTrashed()->exists())
-
+                ->hidden(fn ($record) => $record->membresias()->exists()),
         ];
     }
 }

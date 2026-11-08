@@ -24,6 +24,10 @@ class Prestamo extends Model
 
     public function detalles(): HasMany
     {
-        return $this->hasMany(DetallePrestamo::class);
+        return $this->hasMany(
+            DetallePrestamo::class,
+            'prestamo_idPrestamo',
+            'idPrestamo'
+        );
     }
 }

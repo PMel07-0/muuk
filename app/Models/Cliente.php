@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Cliente extends Model
 {
@@ -21,13 +22,19 @@ class Cliente extends Model
 
     public function membresias(): HasMany
     {
-        return $this->hasMany(Membresia::class);
+        return $this->hasMany(
+            Membresia::class,
+            'cliente_idCliente',
+            'idCliente'
+        );
     }
 
     public function membresiaVigente(): HasOne
     {
-        return $this->hasOne(Membresia::class)
-                    ->where('vigencia', 'Vigente');
+        return $this->hasOne(
+            Membresia::class,
+            'cliente_idCliente',
+            'idCliente'
+        )->whereDate('fechaFin', '>=', today());
     }
-
 }

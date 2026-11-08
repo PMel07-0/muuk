@@ -21,7 +21,11 @@ class DetallePrestamo extends Model
 
     public function prestamo(): BelongsTo
     {
-        return $this->belongsTo(Prestamo::class);
+        return $this->belongsTo(
+            Prestamo::class,
+            'prestamo_idPrestamo',
+            'idPrestamo'
+        );
     }
 
     public function material(): BelongsTo
