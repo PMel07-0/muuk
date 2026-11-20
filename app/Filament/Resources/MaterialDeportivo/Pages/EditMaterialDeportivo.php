@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\MaterialDeportivos\Pages;
+namespace App\Filament\Resources\MaterialDeportivo\Pages;
 
-use App\Filament\Resources\MaterialDeportivos\MaterialDeportivoResource;
+use App\Filament\Resources\MaterialDeportivo\MaterialDeportivoResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
@@ -24,7 +24,7 @@ class EditMaterialDeportivo extends EditRecord
     {
         return [
             DeleteAction::make()
-                ->hidden(fn ($record) => $record->materialesDeportivos()->withTrashed()->exists())
+                ->hidden(fn ($record) => $record->detallesPrestamo()->exists())
 
         ];
     }

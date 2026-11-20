@@ -29,7 +29,11 @@ class DetallePrestamo extends Model
     }
 
     public function material(): BelongsTo
-    {
-        return $this->belongsTo(MaterialDeportivo::class);
+    {   
+        return $this->belongsTo(
+            MaterialDeportivo::class,
+            'material_idMaterial',
+            'idMaterial'
+        );
     }
 }

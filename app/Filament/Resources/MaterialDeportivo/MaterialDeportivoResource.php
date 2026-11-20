@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Filament\Resources\MaterialDeportivos;
+namespace App\Filament\Resources\MaterialDeportivo;
 
-use App\Filament\Resources\MaterialDeportivos\Pages\CreateMaterialDeportivo;
-use App\Filament\Resources\MaterialDeportivos\Pages\EditMaterialDeportivo;
-use App\Filament\Resources\MaterialDeportivos\Pages\ListMaterialDeportivos;
-use App\Filament\Resources\MaterialDeportivos\Schemas\MaterialDeportivoForm;
-use App\Filament\Resources\MaterialDeportivos\Tables\MaterialDeportivosTable;
+use App\Filament\Resources\MaterialDeportivo\Pages\CreateMaterialDeportivo;
+use App\Filament\Resources\MaterialDeportivo\Pages\EditMaterialDeportivo;
+use App\Filament\Resources\MaterialDeportivo\Pages\ListMaterialDeportivo;
+use App\Filament\Resources\MaterialDeportivo\Schemas\MaterialDeportivoForm;
+use App\Filament\Resources\MaterialDeportivo\Tables\MaterialDeportivoTable;
 use App\Models\MaterialDeportivo;
 use BackedEnum;
 use Filament\Resources\Resource;
@@ -29,7 +29,7 @@ class MaterialDeportivoResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return MaterialDeportivosTable::configure($table);
+        return MaterialDeportivoTable::configure($table);
     }
 
     public static function getRelations(): array
@@ -42,7 +42,7 @@ class MaterialDeportivoResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListMaterialDeportivos::route('/'),
+            'index' => ListMaterialDeportivo::route('/'),
             'create' => CreateMaterialDeportivo::route('/create'),
             'edit' => EditMaterialDeportivo::route('/{record}/edit'),
         ];

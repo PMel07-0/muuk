@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\MaterialDeportivos\Schemas;
+namespace App\Filament\Resources\MaterialDeportivo\Schemas;
 
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;

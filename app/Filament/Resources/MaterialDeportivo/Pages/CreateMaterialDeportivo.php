@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Filament\Resources\MaterialDeportivos\Pages;
+namespace App\Filament\Resources\MaterialDeportivo\Pages;
 
-use App\Filament\Resources\MaterialDeportivos\MaterialDeportivoResource;
+use App\Filament\Resources\MaterialDeportivo\MaterialDeportivoResource;
 use Filament\Resources\Pages\CreateRecord;
 
 class CreateMaterialDeportivo extends CreateRecord

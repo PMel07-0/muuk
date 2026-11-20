@@ -21,7 +21,11 @@ class MaterialDeportivo extends Model
 
     public function detallesPrestamo(): HasMany
     {
-        return $this->hasMany(DetallePrestamo::class);
+        return $this->hasMany(
+            DetallePrestamo::class,
+            'material_idMaterial',
+            'idMaterial'
+        );
     }
 }
 
