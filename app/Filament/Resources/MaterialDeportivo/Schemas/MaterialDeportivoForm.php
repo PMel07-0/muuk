@@ -48,12 +48,11 @@ class MaterialDeportivoForm
 
                 TextInput::make('cantidad_disponible')
                     ->label('Cantidad disponible')
-                    ->placeholder('Ej. 8')
-                    ->helperText('Unidades disponibles para préstamo.')
-                    ->numeric()
-                    ->minValue(0)
-                    ->required(),
-
+                    ->formatStateUsing(fn ($record) => $record?->cantidad_disponible ?? 0)
+                    ->disabled()
+                    ->dehydrated(false)
+                    ->helperText('Calculada automáticamente según el inventario y los préstamos activos.'),
+                    
                 Select::make('estatus')
                     ->label('Estatus')
                     ->options([

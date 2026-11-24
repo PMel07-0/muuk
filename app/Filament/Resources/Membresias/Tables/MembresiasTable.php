@@ -34,12 +34,14 @@ class MembresiasTable
                     ->label('Pago')
                     ->money('MXN')
                     ->sortable(),
-                TextColumn::make('vigencia')
-                    ->state(fn ($record) => $record->vigencia_calculada)
+                TextColumn::make('vigencia_calculada')
                     ->label('Vigencia')
                     ->badge()
-                    ->color(fn (string $state): string =>
-                        $state === 'Vigente' ? 'success' : 'danger'),
+                    ->color(fn (string $state): string => match ($state) {
+                        'Vigente' => 'success',
+                        'Vencida' => 'danger',
+                        default => 'gray',
+                    }),
             ])
             ->filters([
                 //

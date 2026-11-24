@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Carbon;
 
 class Membresia extends Model
 {
@@ -53,7 +54,11 @@ class Membresia extends Model
 
     public function getVigenciaCalculadaAttribute(): string
     {
-        return now()->lt($this->fechaFin->copy()->addDay())
+        if (! $this->fechaFin) {
+            return 'Vigente';
+        }
+
+        return Carbon::today()->lte($this->fechaFin->copy()->startOfDay())
             ? 'Vigente'
             : 'Vencida';
     }

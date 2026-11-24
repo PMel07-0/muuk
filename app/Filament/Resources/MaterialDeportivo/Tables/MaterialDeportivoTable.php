@@ -24,8 +24,12 @@ class MaterialDeportivoTable
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('cantidad_disponible')
+                    ->label('Cantidad disponible')
+                    ->state(fn ($record): int => (int) $record->cantidad_disponible)
                     ->numeric()
-                    ->sortable(),
+                    ->sortable(query: function ($query, string $direction) {
+                        return $query->orderBy('cantidad_inventario', $direction);
+                    }),
                 TextColumn::make('estatus')
                     ->searchable(),
                 TextColumn::make('created_at')
